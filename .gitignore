@@ -1,0 +1,49 @@
+# ================================================================
+# DATABASE — contains password hashes, emails, student numbers and
+# every grade. Never commit this. It is created automatically on
+# first request (schema + seed + policy migration all run in db.php).
+# ================================================================
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# ================================================================
+# UPLOADS — student submissions, profile photos, announcement
+# images. Personal data; must not enter version control.
+# Keep the directory itself so a fresh clone has somewhere to write.
+# ================================================================
+uploads/*
+!uploads/.gitkeep
+
+# ================================================================
+# DEPENDENCIES — restored by `composer install`.
+# PhpSpreadsheet alone is 1,000+ files.
+# ================================================================
+/vendor/
+composer.phar
+
+# ================================================================
+# SECRETS / LOCAL CONFIG
+# ================================================================
+.env
+.env.local
+*.env
+
+# ================================================================
+# OFFICE / EDITOR LOCK FILES  (~$THODOLOGY.docx etc.)
+# ================================================================
+~$*
+.~lock.*
+
+# ================================================================
+# OS + editor cruft
+# ================================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo

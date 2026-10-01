@@ -1,0 +1,1375 @@
+/* ================================================================
+   SCHOOL PORTAL — DESIGN SYSTEM
+   Style: Classical Academy · Clean & Scholarly
+   Brand: Ink Navy #0D1B3E / Antique Gold #C9A227 · Light + Dark
+   Type:  Playfair Display (display serif) + Segoe UI (body sans)
+   ================================================================ */
+
+:root {
+    /* Typography */
+    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', 'Palatino Linotype', serif;
+    --font-sans: 'Segoe UI', system-ui, Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Brand */
+    --navy: #0D1B3E;
+    --navy-light: #1a2d5e;
+    --navy-dark: #080f24;
+    --gold: #C9A227;
+    --gold-light: #dcc46a;
+    --gold-dark: #9a7d1a;
+    --white: #ffffff;
+    --gray-light: #f8f9fa;
+    --gray: #6c757d;
+
+    /* Radii — crisp, engraved edges */
+    --radius: 3px;
+    --radius-lg: 4px;
+
+    /* Theme surfaces (light — warm paper) */
+    --app-bg: #f5f3ec;
+    --app-text: #2a3348;
+    --heading-text: #16203e;
+    --card-bg: #fffefb;
+    --card-border: rgba(22, 32, 62, 0.13);
+    --card-shadow: none;
+    --card-shadow-hover: 0 3px 14px rgba(22, 32, 62, 0.10);
+    --muted: #6b7385;
+
+    /* Inputs */
+    --input-bg: #ffffff;
+    --input-border: rgba(22, 32, 62, 0.24);
+    --input-focus-ring: rgba(201, 162, 39, 0.26);
+
+    /* Tables */
+    --table-head-bg: rgba(13, 27, 62, 0.045);
+    --table-head-text: var(--heading-text);
+    --table-stripe: rgba(13, 27, 62, 0.02);
+    --table-hover: rgba(201, 162, 39, 0.08);
+    --table-border: rgba(22, 32, 62, 0.11);
+
+    /* Sticky column (gradebook) */
+    --sticky-col-bg: #fffefb;
+    --sticky-col-hover: #faf5e6;
+    --sticky-col-shadow: rgba(22, 32, 62, 0.08);
+
+    /* Nav pills / accordion / modals */
+    --nav-pill-bg: #edeadf;
+    --nav-pill-text: var(--heading-text);
+    --nav-pill-active-bg: var(--navy);
+    --nav-pill-active-text: #fff;
+    --accordion-bg: rgba(201, 162, 39, 0.10);
+    --accordion-text: var(--heading-text);
+    --modal-header-bg: var(--card-bg);
+    --modal-header-text: var(--heading-text);
+
+    /* Links & buttons */
+    --link-color: var(--navy);
+    --link-hover: var(--gold-dark);
+    --btn-primary-bg: var(--navy);
+    --btn-primary-border: var(--navy);
+    --btn-primary-hover-bg: var(--navy-light);
+    --btn-outline-primary-color: var(--heading-text);
+    --btn-outline-primary-border: rgba(22, 32, 62, 0.40);
+    --nav-link-color: rgba(255,255,255,0.82);
+    --nav-link-hover-bg: rgba(255, 255, 255, 0.10);
+    --nav-link-hover-color: #ffffff;
+    --nav-link-active-color: var(--gold-light);
+    /* Classic theme: flat solid surfaces, no gradients */
+    --brand-gradient: var(--navy);
+
+    /* Soft header strip on cards */
+    --soft-header-bg: #f7f4ea;
+    --soft-header-text: var(--heading-text);
+
+    /* Empty state */
+    --empty-icon-bg: rgba(13, 27, 62, 0.05);
+
+    /* Auth pages backdrop (classic: plain paper) */
+    --auth-backdrop: var(--app-bg);
+
+    color-scheme: light;
+}
+
+[data-bs-theme="dark"] {
+    /* Theme surfaces (dark — deep ink, parchment text) */
+    --app-bg: #0b1120;
+    --app-text: #dbe2ee;
+    --heading-text: #f1f4fa;
+    --card-bg: #121b2e;
+    --card-border: rgba(255, 255, 255, 0.10);
+    --card-shadow: none;
+    --card-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.45);
+    --muted: #92a0b8;
+
+    --input-bg: #0e1728;
+    --input-border: rgba(255, 255, 255, 0.16);
+    --input-focus-ring: rgba(212, 175, 55, 0.24);
+
+    --table-head-bg: rgba(255, 255, 255, 0.045);
+    --table-head-text: #f1f4fa;
+    --table-stripe: rgba(255, 255, 255, 0.02);
+    --table-hover: rgba(212, 175, 55, 0.07);
+    --table-border: rgba(255, 255, 255, 0.09);
+
+    --sticky-col-bg: #121b2e;
+    --sticky-col-hover: #1c2942;
+    --sticky-col-shadow: rgba(0, 0, 0, 0.35);
+
+    --nav-pill-bg: #1b2740;
+    --nav-pill-text: #dbe2ee;
+    --nav-pill-active-bg: var(--gold);
+    --nav-pill-active-text: var(--navy);
+    --accordion-bg: rgba(212, 175, 55, 0.10);
+    --accordion-text: #f1f4fa;
+    --modal-header-bg: #161f34;
+    --modal-header-text: #f1f4fa;
+
+    --link-color: #d9bc55;
+    --link-hover: #ecd489;
+    --btn-primary-bg: #24365f;
+    --btn-primary-border: #2c4070;
+    --btn-primary-hover-bg: #2d4372;
+    --btn-outline-primary-color: #d9bc55;
+    --btn-outline-primary-border: rgba(217, 188, 85, 0.45);
+    --brand-gradient: #101c3a;
+
+    --soft-header-bg: rgba(255, 255, 255, 0.04);
+    --soft-header-text: #f1f4fa;
+
+    --empty-icon-bg: rgba(255, 255, 255, 0.06);
+
+    --auth-backdrop: var(--app-bg);
+
+    color-scheme: dark;
+}
+
+/* ================================================================
+   BASE
+   ================================================================ */
+body {
+    font-family: var(--font-sans);
+    background: var(--app-bg);
+    color: var(--app-text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Classical academic typography: engraved serif headings */
+h1, h2, h3, h4, h5, h6,
+.page-title,
+.modal-title,
+.stat-value,
+.navbar-brand {
+    font-family: var(--font-serif);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-text);
+    letter-spacing: 0.01em;
+}
+
+a { color: var(--link-color); text-decoration: none; }
+a:hover { color: var(--link-hover); }
+
+.breadcrumb a { color: var(--link-color); text-decoration: none; }
+.breadcrumb a:hover { color: var(--link-hover); }
+
+hr { border-color: var(--card-border); opacity: 1; }
+
+::selection { background: rgba(201, 162, 39, 0.32); }
+
+/* Slim, theme-aware scrollbars (WebKit/Blink) */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: rgba(22, 32, 62, 0.28);
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover { background-color: rgba(22, 32, 62, 0.45); }
+[data-bs-theme="dark"] ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.22);
+}
+[data-bs-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.38);
+}
+
+/* ================================================================
+   NAVBAR (solid ink navy, gold double rule)
+   ================================================================ */
+.navbar {
+    background: var(--brand-gradient) !important;
+    border-bottom: 4px double var(--gold);
+}
+
+.app-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    border-bottom: 4px double var(--gold);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 2px 12px rgba(8, 15, 36, 0.20);
+}
+
+.navbar-brand {
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    font-size: 1.3rem;
+    color: var(--white) !important;
+}
+
+.navbar-brand img { border-radius: 3px; }
+
+.navbar-brand i, .navbar-brand .mortarboard { color: var(--gold-light); }
+
+.navbar .nav-link {
+    color: var(--nav-link-color) !important;
+    border-radius: var(--radius);
+    padding: 6px 12px !important;
+    margin: 2px 3px;
+    font-weight: 500;
+    transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.navbar .nav-link:hover {
+    background: var(--nav-link-hover-bg);
+    color: var(--nav-link-hover-color) !important;
+}
+
+.navbar .nav-link.active {
+    background: transparent;
+    color: var(--nav-link-active-color) !important;
+    font-weight: 600;
+    box-shadow: inset 0 -2px 0 var(--gold);
+}
+
+/* Identity chip (signed-in user) */
+.nav-user-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 3px 14px 3px 4px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    color: #fff;
+    line-height: 1.15;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-user-chip .user-avatar {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(201, 162, 39, 0.16);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+}
+
+.nav-user-chip .user-meta strong {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nav-user-chip .user-meta small {
+    display: block;
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.60);
+}
+
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.35);
+}
+.navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.45); }
+
+/* ================================================================
+   CARDS — paper sheets with hairline rules
+   ================================================================ */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    transition: box-shadow 0.22s ease, transform 0.22s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover { box-shadow: var(--card-shadow-hover); }
+
+/* Gentle lift for interactive summary cards */
+.class-card:hover,
+.stat-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(201, 162, 39, 0.45);
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid var(--card-border);
+    color: var(--heading-text);
+    font-weight: 600;
+    border-radius: var(--radius) var(--radius) 0 0 !important;
+}
+
+.card-footer {
+    background: transparent;
+    border-top: 1px solid var(--card-border);
+    color: var(--muted);
+}
+
+/* Parchment card header with double rule */
+.card-header-soft {
+    background: var(--soft-header-bg);
+    color: var(--soft-header-text);
+    border-bottom: 3px double var(--card-border);
+    font-family: var(--font-serif);
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.1em;
+    font-size: 1.05rem;
+}
+
+.card-header-soft .small,
+.card-header-soft kbd,
+.card-header-soft .text-muted {
+    font-family: var(--font-sans);
+    font-variant-caps: normal;
+    letter-spacing: normal;
+}
+
+/* ================================================================
+   PAGE HEADER pattern (title + actions row)
+   ================================================================ */
+.page-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px double var(--card-border);
+}
+
+.page-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--heading-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.page-subtitle {
+    color: var(--muted);
+    font-size: 0.875rem;
+    margin: 0.15rem 0 0;
+}
+
+/* ================================================================
+   BUTTONS — squared, engraved
+   ================================================================ */
+.btn {
+    border-radius: var(--radius);
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.btn:focus-visible { outline-offset: 2px; }
+
+.btn:not(:disabled):active { transform: translateY(1px); }
+
+/* Solid ink primary action */
+.btn-brand,
+.btn-brand:focus {
+    background: var(--btn-primary-bg);
+    border: 1px solid var(--btn-primary-border);
+    color: #fff;
+}
+
+.btn-brand:hover {
+    background: var(--btn-primary-hover-bg);
+    border-color: var(--btn-primary-hover-bg);
+    color: #fff;
+}
+
+/* Antique gold accent action */
+.btn-accent,
+.btn-accent:focus {
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: var(--navy);
+}
+
+.btn-accent:hover {
+    background: var(--gold-dark);
+    border-color: var(--gold-dark);
+    color: var(--navy);
+}
+
+.btn-primary {
+    background: var(--btn-primary-bg);
+    border: 1px solid var(--btn-primary-border);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--btn-primary-hover-bg);
+    border-color: var(--btn-primary-hover-bg);
+    color: var(--white);
+}
+
+.btn-outline-primary {
+    color: var(--btn-outline-primary-color);
+    border: 1.5px solid var(--btn-outline-primary-border);
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: var(--btn-primary-bg);
+    border-color: var(--btn-primary-bg);
+    color: #fff;
+}
+
+[data-bs-theme="dark"] .btn-outline-primary:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+}
+
+.btn-warning {
+    background: var(--gold);
+    border: none;
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.btn-warning:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: var(--navy); }
+
+.btn-secondary {
+    background: var(--gray);
+    border: 1px solid var(--gray);
+    color: #fff;
+}
+
+.btn-secondary:hover { background: #5a6268; border-color: #545b62; color: #fff; }
+
+.btn-sm, .btn-xs { border-radius: var(--radius); }
+
+/* ================================================================
+   STAT CARDS (dashboards)
+   ================================================================ */
+.stat-card {
+    text-align: center;
+    padding: 1.15rem 0.75rem 1rem;
+    border-top: 3px solid var(--gold);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--heading-text);
+    margin: 0;
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+.stat-value.text-good { color: #198754; }
+[data-bs-theme="dark"] .stat-value.text-good { color: #4cd48b; }
+.stat-value.text-bad { color: #dc3545; }
+[data-bs-theme="dark"] .stat-value.text-bad { color: #ff7b89; }
+
+.stat-label {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.12em;
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 0.55rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    background: var(--empty-icon-bg);
+    border: 1px solid var(--card-border);
+    color: var(--gold-dark);
+}
+
+[data-bs-theme="dark"] .stat-icon { color: var(--gold-light); }
+
+/* ================================================================
+   CLASS CARDS
+   ================================================================ */
+.class-card {
+    height: 100%;
+    position: relative;
+}
+
+.class-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: var(--accent-color, var(--gold));
+    transition: width 0.18s ease;
+}
+
+.class-card:hover::before { width: 6px; }
+
+.class-card .card-body { padding-left: 1.15rem; }
+
+.class-card .card-title {
+    color: var(--heading-text);
+    font-family: var(--font-serif);
+    font-weight: 700;
+}
+
+/* Rotating scholarly accent palette for class cards */
+.accent-0 { --accent-color: #C9A227; }  /* antique gold  */
+.accent-1 { --accent-color: #4A6FA5; }  /* slate blue    */
+.accent-2 { --accent-color: #5E8C61; }  /* sage green    */
+.accent-3 { --accent-color: #B26052; }  /* terracotta    */
+.accent-4 { --accent-color: #7E6B9E; }  /* muted plum    */
+.accent-5 { --accent-color: #C47F3D; }  /* bronze ochre  */
+
+/* ================================================================
+   FORMS
+   ================================================================ */
+.form-control, .form-select {
+    background: var(--input-bg);
+    color: var(--app-text);
+    border: 1px solid var(--input-border);
+    border-radius: var(--radius);
+    padding: 8px 12px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    background: var(--input-bg);
+    color: var(--app-text);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 0.22rem var(--input-focus-ring);
+}
+
+.form-control::placeholder { color: var(--muted); opacity: 1; }
+
+.form-label {
+    font-weight: 600;
+    color: var(--heading-text);
+    font-size: 0.875rem;
+    letter-spacing: 0.01em;
+}
+
+.input-group-text {
+    background: var(--soft-header-bg);
+    border-color: var(--input-border);
+    color: var(--muted);
+}
+
+.form-check-input:checked { background-color: var(--navy); border-color: var(--navy); }
+[data-bs-theme="dark"] .form-check-input:checked { background-color: var(--gold); border-color: var(--gold); }
+.form-check-input:focus { box-shadow: 0 0 0 0.2rem var(--input-focus-ring); border-color: var(--gold); }
+
+/* ================================================================
+   TABLES — ledger style
+   ================================================================ */
+.table { color: var(--app-text); border-color: var(--table-border); }
+
+.table thead th {
+    background: var(--table-head-bg);
+    color: var(--table-head-text);
+    border-bottom: 3px double var(--table-border);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.table td, .table th { border-color: var(--table-border); }
+
+/* Roomier rows for standard tables (compact tables untouched) */
+.table:not(.table-sm) tbody td { padding-top: 0.65rem; padding-bottom: 0.65rem; vertical-align: middle; }
+
+.table-striped > tbody > tr:nth-of-type(odd) > td,
+.table-striped > tbody > tr:nth-of-type(odd) > th {
+    background: var(--table-stripe);
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    background: var(--table-hover);
+}
+
+/* Gradebook sticky name column */
+.sticky-col {
+    position: sticky;
+    left: 0;
+    background: var(--sticky-col-bg);
+    z-index: 1;
+    box-shadow: 2px 0 5px var(--sticky-col-shadow);
+}
+
+.table-hover tbody tr:hover .sticky-col {
+    background: var(--sticky-col-hover);
+}
+
+/* ================================================================
+   BADGES / ALERTS / MODALS / MISC COMPONENTS
+   ================================================================ */
+.badge {
+    border-radius: 2px;
+    font-weight: 600;
+    padding: 0.38em 0.65em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.72em;
+}
+.badge.bg-warning { color: var(--navy) !important; }
+
+.alert {
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+}
+
+.alert-info { background: rgba(74, 111, 165, 0.10); border-color: rgba(74, 111, 165, 0.35); color: var(--app-text); }
+.alert-warning { background: rgba(201, 162, 39, 0.12); border-color: rgba(154, 125, 26, 0.45); color: var(--app-text); }
+.alert-success { background: rgba(94, 140, 97, 0.12); border-color: rgba(94, 140, 97, 0.40); color: var(--app-text); }
+.alert-danger { background: rgba(178, 58, 66, 0.10); border-color: rgba(178, 58, 66, 0.40); color: var(--app-text); }
+
+.modal-content {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 16px 44px rgba(8, 15, 36, 0.30);
+}
+
+.modal-header {
+    background: var(--modal-header-bg);
+    border-bottom: 3px double var(--gold);
+    color: var(--modal-header-text);
+    border-radius: calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px) 0 0 !important;
+}
+
+.modal-title { font-weight: 700; letter-spacing: 0.02em; }
+
+.modal-header .btn-close { filter: none; }
+[data-bs-theme="dark"] .modal-header .btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
+
+.modal-footer { border-top: 1px solid var(--card-border); }
+
+.list-group-item {
+    background: var(--card-bg);
+    color: var(--app-text);
+    border-color: var(--card-border);
+    transition: background-color 0.15s ease;
+}
+
+.list-group-item:hover { background: var(--soft-header-bg); }
+
+.text-primary { color: var(--link-color) !important; }
+.bg-primary { background: var(--btn-primary-bg) !important; }
+.border-primary { border-color: var(--btn-primary-border) !important; }
+.text-muted { color: var(--muted) !important; }
+
+footer {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.14em;
+}
+
+/* Ornamental footer rule: hairlines with a gold diamond */
+footer.border-top {
+    border-top: 1px solid var(--card-border) !important;
+    position: relative;
+}
+
+footer.border-top::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(420px, 70%);
+    border-top: 3px double var(--gold);
+    opacity: 0.65;
+}
+
+footer.border-top::after {
+    content: "\2726"; /* ✦ */
+    display: block;
+    text-align: center;
+    color: var(--gold);
+    font-size: 0.7rem;
+    margin-bottom: 0.35rem;
+    font-variant-caps: normal;
+}
+
+/* Term pills */
+.nav-pills .nav-link {
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--nav-pill-bg);
+    color: var(--nav-pill-text);
+    padding: 6px 16px;
+}
+
+/* Classic squared tabs, engraved small caps */
+.nav-tabs {
+    border-bottom: 2px solid var(--navy);
+}
+
+[data-bs-theme="dark"] .nav-tabs {
+    border-bottom-color: var(--gold);
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    border-radius: 0;
+    color: var(--muted);
+    font-weight: 600;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.09em;
+    font-size: 1.02rem;
+    padding: 8px 18px 9px;
+    margin-bottom: -2px;
+}
+
+.nav-tabs .nav-link:hover { color: var(--heading-text); }
+
+.nav-tabs .nav-link.active {
+    background: transparent;
+    color: var(--heading-text);
+    box-shadow: inset 0 -2px 0 var(--gold);
+}
+
+.nav-pills .nav-link.active {
+    background: var(--nav-pill-active-bg);
+    color: var(--nav-pill-active-text);
+}
+
+.nav-pills .nav-link:not(.active):hover {
+    background: var(--soft-header-bg);
+    color: var(--heading-text);
+}
+
+/* Accordions (term breakdowns) */
+.accordion-item {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+    border-radius: var(--radius) !important;
+    overflow: hidden;
+}
+
+.accordion-button {
+    font-weight: 600;
+    background: var(--card-bg);
+    color: var(--accordion-text);
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.07em;
+    font-size: 1.02rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background: var(--accordion-bg);
+    color: var(--accordion-text);
+    box-shadow: none;
+}
+
+.accordion-button:focus { box-shadow: 0 0 0 0.22rem var(--input-focus-ring); }
+
+[data-bs-theme="dark"] .accordion-button::after { filter: invert(1); }
+
+.accordion-body {
+    background: var(--card-bg);
+    color: var(--app-text);
+}
+
+/* Pagination */
+.pagination .page-link {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--link-color);
+    border-radius: var(--radius) !important;
+    margin: 0 2px;
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #fff;
+}
+
+[data-bs-theme="dark"] .pagination .page-item.active .page-link {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+}
+
+.dropdown-menu {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+    border-radius: var(--radius);
+}
+
+.dropdown-item { color: var(--app-text); }
+.dropdown-item:hover { background: var(--soft-header-bg); color: var(--heading-text); }
+
+/* ================================================================
+   EMPTY STATES
+   ================================================================ */
+.empty-state {
+    text-align: center;
+    padding: 2.75rem 1rem;
+    color: var(--muted);
+}
+
+.empty-state .empty-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--empty-icon-bg);
+    border: 1px solid var(--card-border);
+    font-size: 1.6rem;
+    color: var(--gold-dark);
+}
+
+[data-bs-theme="dark"] .empty-state .empty-icon { color: var(--gold-light); }
+
+.empty-state h6 {
+    color: var(--heading-text);
+    font-family: var(--font-serif);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.empty-state p { font-size: 0.875rem; margin-bottom: 1rem; }
+
+/* ================================================================
+   AUTH PAGES (login / register)
+   ================================================================ */
+.auth-body {
+    background: var(--auth-backdrop);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1.5rem 0.75rem;
+}
+
+.auth-card-wrap { width: 100%; max-width: 430px; }
+
+.auth-card {
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden;
+}
+
+/* Crest-style brand plate with gold ornament */
+.auth-brand {
+    text-align: center;
+    padding: 1.9rem 1rem 1.2rem;
+    background: var(--brand-gradient);
+    border-bottom: 4px double var(--gold);
+}
+
+.auth-brand img {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    padding: 4px;
+    margin-bottom: 0.6rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid var(--gold);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+.auth-brand h3 {
+    color: #fff;
+    font-weight: 700;
+    font-variant: small-caps;
+    letter-spacing: 0.09em;
+    margin: 0;
+}
+
+.auth-brand small {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+}
+
+.auth-brand::after {
+    content: "\2726"; /* ✦ */
+    display: block;
+    margin-top: 0.85rem;
+    color: var(--gold-light);
+    font-size: 0.75rem;
+    line-height: 1;
+}
+
+.auth-body-card .card-body { padding: 1.75rem; }
+
+.auth-body-card .form-control {
+    padding: 10px 12px;
+    border-radius: var(--radius);
+}
+
+.auth-body-card .btn {
+    padding: 11px;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+}
+
+/* Card entrance (motion-safe only) */
+@media (prefers-reduced-motion: no-preference) {
+    .auth-card-wrap { animation: rise-in 0.45s ease both; }
+}
+
+@keyframes rise-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: none; }
+}
+
+.theme-toggle-float {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 9999;
+    border-radius: var(--radius) !important;
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--app-text);
+    box-shadow: var(--card-shadow);
+}
+
+/* Navbar theme toggle (clean square icon button) */
+.theme-toggle-btn {
+    width: 36px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: var(--radius);
+    color: #fff;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: var(--gold-light);
+    color: var(--gold-light);
+}
+
+.theme-toggle-float:hover {
+    background: var(--soft-header-bg);
+    color: var(--heading-text);
+}
+
+/* ================================================================
+   GRADEBOOK GRID  (Excel-style: students down, activities across)
+   ================================================================ */
+.gb-scroll {
+    max-height: 72vh;
+    overflow: auto;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    background: var(--sticky-col-bg);
+}
+
+#gradebookGrid {
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 0 !important;
+    --gb-h-group: 42px;      /* height of the category banner button */
+    --gb-h-group-row: 44px;  /* measured height of header row 1 incl. borders */
+    --gb-h-sub: 58px;
+}
+
+/* --- Column widths (the "cramped columns" fix) --- */
+#gradebookGrid th.gb-corner,
+#gradebookGrid td.gb-name,
+#gradebookGrid td.gb-avg-label { min-width: 210px; width: 210px; }
+
+#gradebookGrid .gb-cell { min-width: 88px; }
+#gradebookGrid .gb-ps,
+#gradebookGrid .gb-avg-ps,
+#gradebookGrid .gb-pshead { min-width: 74px; }
+#gradebookGrid .gb-ig,
+#gradebookGrid .gb-avg-ig,
+#gradebookGrid .gb-tg,
+#gradebookGrid .gb-avg-tg { min-width: 72px; width: 72px; }
+#gradebookGrid .gb-desc { min-width: 190px; width: 190px; }
+
+/* NOTE: IG / TG are deliberately NOT frozen to the right. A gradebook with a
+   realistic number of activities is always wider than the viewport, so a
+   right-frozen column permanently covers the last activity. Scroll right to
+   read the grades, or use "Collapse all" to narrow the grid until it fits. */
+
+/* --- Sticky header: two rows with explicit heights so the offsets line up --- */
+#gradebookGrid thead th {
+    position: sticky;
+    background: var(--table-head-bg);
+    color: var(--table-head-text);
+    vertical-align: bottom;
+    padding: 5px 6px;
+    line-height: 1.25;
+}
+#gradebookGrid thead tr:first-child th {
+    top: 0;
+    height: var(--gb-h-group);
+    z-index: 4;
+}
+#gradebookGrid thead tr:nth-child(2) th {
+    top: var(--gb-h-group-row);
+    height: var(--gb-h-sub);
+    z-index: 4;
+}
+#gradebookGrid thead .gb-hi,
+#gradebookGrid thead .gb-corner {
+    vertical-align: middle;
+    text-align: center;
+}
+#gradebookGrid thead .gb-corner { vertical-align: bottom; text-align: left; }
+#gradebookGrid thead .sticky-col { z-index: 6; }
+/* Category group header + collapse toggle */
+#gradebookGrid th.gb-group {
+    background: var(--soft-header-bg);
+    text-align: center;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+}
+.gb-collapse {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    max-width: calc(100% - 30px);
+    height: var(--gb-h-group);
+    padding: 0 8px;
+    background: none;
+    border: 0;
+    color: var(--soft-header-text);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.gb-collapse:hover { background: var(--table-hover); }
+.gb-collapse:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+.gb-caret {
+    display: inline-block;
+    font-size: 0.7rem;
+    line-height: 1;
+    transition: transform 0.15s ease;
+}
+th.gb-group.collapsed .gb-caret { transform: rotate(-90deg); }
+th.gb-group.collapsed .gb-collapse { opacity: 0.6; }
+.gb-w {
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: var(--muted);
+    background: var(--table-head-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 2px;
+    padding: 0 5px;
+}
+/* Add an activity straight from the grid header */
+.gb-add-item {
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    line-height: 1;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--soft-header-text);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0.55;
+}
+.gb-add-item:hover { opacity: 1; background: var(--gold); color: var(--navy); }
+.gb-add-item:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+/* Spreadsheet column letters */
+.gb-colletter {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    opacity: 0.65;
+}
+
+/* Collapsible setup panel (weights + activities) */
+.gb-setup > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.7rem 1rem;
+    background: var(--soft-header-bg);
+    color: var(--soft-header-text);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    user-select: none;
+}
+.gb-setup > summary::-webkit-details-marker { display: none; }
+.gb-setup > summary::before {
+    content: "\25B8";
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.15s ease;
+    color: var(--muted);
+}
+.gb-setup[open] > summary::before { transform: rotate(90deg); }
+.gb-setup[open] > summary { border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 0.75rem; }
+.gb-setup > summary:hover { background: var(--accordion-bg); }
+.gb-setup > summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* --- Student column --- */
+#gradebookGrid td.gb-name {
+    padding: 4px 8px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.gb-rn {
+    display: inline-block;
+    min-width: 1.7em;
+    margin-right: 8px;
+    padding: 0 4px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-align: right;
+    color: var(--muted);
+    background: var(--table-head-bg);
+    border-radius: 2px;
+}
+
+/* --- Cells --- */
+#gradebookGrid td.gb-cell { padding: 2px 3px; }
+#gradebookGrid td.gb-ps,
+#gradebookGrid td.gb-ig,
+#gradebookGrid td.gb-tg,
+#gradebookGrid td.gb-desc,
+#gradebookGrid td.gb-avg-ps,
+#gradebookGrid td.gb-avg-ig,
+#gradebookGrid td.gb-avg-tg {
+    padding: 4px 6px;
+    font-size: 0.92rem;
+}
+#gradebookGrid td.gb-ps,
+#gradebookGrid td.gb-avg-ps,
+#gradebookGrid th.gb-pshead { background: var(--table-head-bg); }
+#gradebookGrid tbody tr:hover td.gb-ps { background: var(--table-hover); }
+
+.gb-input {
+    width: 100%;
+    min-width: 70px;
+    text-align: center;
+    padding: 5px 4px !important;
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+    background: transparent;
+    border-color: transparent;
+}
+.gb-input:hover { border-color: var(--input-border); background: var(--input-bg); }
+.gb-input:focus {
+    background: var(--input-bg);
+    border-color: var(--navy);
+    box-shadow: 0 0 0 3px var(--input-focus-ring);
+}
+
+/* The Excel cell cursor: outline the cell, highlight its row + column headers. */
+#gradebookGrid td.gb-active,
+#gradebookGrid td.gb-sel { position: relative; }
+#gradebookGrid td.gb-active::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--navy);
+    border-radius: 3px;
+    pointer-events: none;
+    z-index: 4;
+}
+/* Range selected with Shift+arrows */
+#gradebookGrid td.gb-sel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(74, 111, 165, 0.20);
+    border: 1px solid rgba(74, 111, 165, 0.55);
+    pointer-events: none;
+    z-index: 3;
+}
+#gradebookGrid tr.gb-hi-row > td { background: var(--table-hover); }
+#gradebookGrid th.gb-hi-col { background: var(--table-hover); box-shadow: inset 0 0 0 2px var(--navy); }
+
+.gb-input.cell-dirty {
+    border-color: var(--gold);
+    background: rgba(201, 162, 39, 0.14);
+    box-shadow: none;
+}
+.gb-input.cell-over {
+    border-color: #dc3545;
+    background: rgba(220, 53, 69, 0.14);
+    box-shadow: 0 0 0 0.15rem rgba(220, 53, 69, 0.18);
+}
+
+/* --- Class average row --- */
+#gradebookGrid tfoot .gb-avg-row td {
+    background: var(--soft-header-bg);
+    color: var(--soft-header-text);
+    border-top: 2px solid var(--gold);
+    font-weight: 600;
+}
+#gradebookGrid tfoot .gb-avg-row td.sticky-col { z-index: 3; }
+#gradebookGrid td.gb-avg-label { text-align: left; letter-spacing: 0.03em; }
+
+/* --- Status line --- */
+#gbStatus.saving { color: var(--muted); }
+#gbStatus.saved { color: var(--muted); }
+#gbStatus.dirty { color: var(--gold-dark); font-weight: 600; }
+#gbStatus.error { color: #b23a42; font-weight: 600; }
+
+.sticky-save-bar {
+    position: sticky;
+    bottom: 0;
+    background: var(--card-bg);
+    border-top: 1px solid var(--card-border);
+    margin-bottom: -1px;
+    z-index: 5;
+}
+
+kbd {
+    background: var(--soft-header-bg);
+    color: var(--heading-text);
+    border: 1px solid var(--card-border);
+    border-radius: 2px;
+    padding: 0.05rem 0.35rem;
+    font-size: 0.75em;
+}
+
+/* ================================================================
+   PROFILE
+   ================================================================ */
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    margin-bottom: 0.6rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+}
+
+/* ================================================================
+   ACCESSIBILITY & MOBILE
+   ================================================================ */
+
+/* Touch-friendly minimum hit area for controls */
+.navbar .nav-link,
+.btn,
+.btn-sm,
+.btn-xs,
+.list-group-item a,
+.table td .btn,
+.nav-pills .nav-link,
+.nav-tabs .nav-link {
+    min-height: 40px;
+}
+
+/* Visible keyboard focus (WCAG 2.4.7) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+    border-radius: var(--radius);
+}
+
+/* Identity chip collapses away on small screens */
+@media (max-width: 991.98px) {
+    .nav-user-chip { display: none; }
+}
+
+/* Stat/class cards on small screens */
+@media (max-width: 575.98px) {
+    h4 { font-size: 1.15rem; }
+    .page-title { font-size: 1.2rem; }
+    .stat-value { font-size: 1.5rem; }
+    .card-title { font-size: 1rem; }
+    .navbar .nav-link,
+    .btn,
+    .btn-sm { min-height: 44px; }
+    .table thead th { white-space: nowrap; }
+    .table-sm td { padding: 0.4rem 0.35rem; }
+    .container { padding-left: 12px; padding-right: 12px; }
+    .auth-card-wrap { max-width: 100%; }
+}
+
+/* Smooth theme crossfade (only when motion is allowed) */
+@media (prefers-reduced-motion: no-preference) {
+    body, .card, .navbar, .form-control, .form-select, .table, .list-group-item,
+    .accordion-button, .accordion-item, .btn, .navbar .nav-link, .sticky-col,
+    .modal-content, .dropdown-menu, .pagination .page-link {
+        transition: background-color 0.2s ease, color 0.2s ease,
+                    border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+}
+
+/* Reduced motion (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
