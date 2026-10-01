@@ -51,11 +51,40 @@ Two further notes:
 
 ```bash
 composer install          # installs PhpSpreadsheet into vendor/
-php -S localhost:8000    # or run start.bat on Windows
+./start.sh                # Linux, macOS, Termux (Android)
+start.bat                 # Windows  (also serves the LAN, see below)
 ```
 
 Open <http://localhost:8000>. There is no install step — `db.php` creates the schema, seeds
 the demo data and applies the grading-policy migration on first load.
+
+### On a phone or tablet (Android)
+
+Termux ships PHP with `pdo_sqlite`, `sqlite3`, `mbstring`, `zip` and `xml`, so the portal
+runs on the device itself with no server and no hosting.
+
+1. Install **Termux from F-Droid** — the Play Store build is deprecated and won't work.
+2. In Termux: `pkg install php` then `termux-setup-storage`.
+3. Copy the project **into Termux's own directory**, not into Downloads:
+   ```bash
+   mkdir -p ~/www && cd ~/www
+   # then unzip/copy the project here
+   ```
+   ⚠️ This matters: Android's shared storage (`/sdcard`, `Downloads`) does **not** support
+   the file locking SQLite needs, so a database kept there will fail to open.
+4. `cd ~/www/StudentPortal && ./start.sh`
+5. Run `termux-wake-lock` first, or Android will suspend Termux when you switch to the
+   browser. Keep the Termux session alive in the background.
+6. Open **<http://localhost:8000>** in the tablet's browser.
+
+iOS/iPadOS has no PHP runtime available, so an iPad can't run this directly — it needs a
+host or a remote-terminal workaround.
+
+### Reaching it from another device on the same WiFi
+
+`start.bat` binds to `0.0.0.0` (Windows Firewall may prompt to allow it). Then on any
+phone or tablet on that WiFi, open `http://<the-PC's-IP>:8000` — `start.bat` prints the
+address. The PC must stay awake.
 
 ## Tests
 
